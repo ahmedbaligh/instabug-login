@@ -1,37 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
 
-import logo from './assets/logo.svg';
+import './stylesheets/App.scss';
+import Login from './components/Login';
 
 const App = () => {
   return (
     <Router>
       <div>
-        <div>
-          <img src={logo} alt="" />
-
-          <div>
-            <ul>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/welcome">Welcome</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <Switch>
+          <Redirect exact from="/" to="/login" />
+
           <Route exact path="/login">
-            Login
+            <Login />
           </Route>
 
           <Route exact path="/welcome">
             Welcome
           </Route>
 
-          <Route path="*">Error 404</Route>
+          <Route path="/404">Error 404</Route>
         </Switch>
       </div>
     </Router>

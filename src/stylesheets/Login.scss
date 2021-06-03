@@ -1,0 +1,196 @@
+@import './App.scss';
+
+.login-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+
+  & > * {
+    flex: 50%;
+  }
+
+  .login {
+    border: 1px solid red;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    padding: 50px 100px;
+
+    .login-text {
+      font-size: 32px;
+      text-align: center;
+      margin: 20px 0 40px;
+    }
+
+    .logo-card {
+      text-align: center;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .social-logins {
+      position: relative;
+      width: 100%;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #dcdee3;
+
+      .social-login {
+        display: flex;
+        margin-bottom: 10px;
+        height: 40px;
+        font-size: 14px;
+        line-height: 38px;
+        font-weight: 600;
+        min-width: 88px;
+        max-width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+
+        img {
+          padding: 7px 6px;
+          width: 40px;
+          margin-left: 10px;
+        }
+
+        span {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        &.google {
+          background-color: #4285f4;
+
+          img {
+            border-radius: 4px;
+            margin-left: 2px;
+            align-self: center;
+            background-color: #fff;
+            height: calc(100% - 5px);
+          }
+        }
+
+        &.github {
+          background-color: #333;
+
+          img {
+            filter: invert(1);
+          }
+        }
+
+        &.microsoft {
+          border: 1px solid #8c8c8c;
+          background-color: #fff;
+          color: #5e5e5e;
+
+          img {
+            filter: saturate(130%);
+          }
+        }
+      }
+
+      .divider {
+        text-transform: uppercase;
+        font-weight: 600;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        padding-right: 8px;
+        padding-left: 8px;
+        transform: translate(-50%, 50%);
+        background-color: #fff;
+      }
+    }
+
+    form {
+      .form-field {
+        margin-bottom: 16px;
+        align-self: flex-start;
+        font-size: 13px;
+
+        label {
+          margin-bottom: 4px;
+          cursor: pointer;
+          display: inline-block;
+          width: 50%;
+        }
+
+        .forgot-password {
+          display: inline-block;
+          width: 50%;
+          text-align: right;
+          color: #a6a6a6;
+
+          &:hover {
+            color: $supplementary-color;
+          }
+        }
+
+        input {
+          height: 40px;
+          padding: 8px 16px;
+          border: 1px solid #dcdee3;
+          border-radius: 4px;
+          width: 100%;
+
+          &::placeholder {
+            color: #a6a6a6;
+          }
+
+          &:focus {
+            border-color: $input-focus-color;
+            box-shadow: inset 0 0 4px 0 $input-focus-color;
+          }
+        }
+
+        .invalid-text {
+          display: none;
+          margin-top: 4px;
+          font-size: 11px;
+          line-height: 1.6;
+          color: #f24220;
+        }
+
+        &.invalid {
+          input {
+            box-shadow: none;
+            border-color: #f24220;
+          }
+
+          .invalid-text {
+            display: block;
+          }
+        }
+      }
+
+      button[type='submit'] {
+        cursor: pointer;
+        background-color: $supplementary-color;
+        color: #fff;
+        width: 100%;
+        margin-bottom: 8px;
+        height: 40px;
+        line-height: 38px;
+        font-weight: 600;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        user-select: none;
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

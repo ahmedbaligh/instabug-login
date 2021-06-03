@@ -1,0 +1,44 @@
+@import './App.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+div,
+ul,
+span,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+body {
+  font: 400 16px/1.4 Helvetica, Arial, sans-serif;
+  background: $page-background;
+  color: $primary-color;
+}
