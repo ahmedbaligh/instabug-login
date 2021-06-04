@@ -10,7 +10,7 @@ const Error404 = () => {
   }, []);
 
   return (
-    <div className="wrapper">
+    <div className="error-wrapper">
       <div className="illustration">
         <img src={illustration404} alt="" />
       </div>

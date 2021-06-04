@@ -3,7 +3,19 @@
 .container {
   width: 440px;
   margin: 0 auto;
-  padding: 0 15px;
+  max-width: 90%;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 567px) {
+  .container {
+    width: 90%;
+  }
 }
 
 .login-wrapper {

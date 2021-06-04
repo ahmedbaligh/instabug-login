@@ -56,6 +56,21 @@
   }
 
   .welcome-text {
+    width: 90%;
+    text-align: center;
     font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 567px) {
+  .welcome {
+    header .wrapper {
+      padding: 0;
+    }
+
+    .welcome-text {
+      font-size: 1.8rem;
+      width: 95%;
+    }
   }
 }
