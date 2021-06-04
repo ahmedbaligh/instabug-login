@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
 
 import '../stylesheets/Welcome.scss';
-import auth from '../utils/auth';
-import logo from '../assets/logo.svg';
+import { auth } from '../utils';
+import { logo } from '../assets';
 
 const Welcome = () => {
   const history = useHistory();

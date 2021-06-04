@@ -2,11 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 
 import '../stylesheets/Login.scss';
-import logo from '../assets/logo.svg';
-import googleLogo from '../assets/google.svg';
-import githubLogo from '../assets/github.svg';
-import microsoftLogo from '../assets/microsoft.svg';
-import auth from '../utils/auth';
+import { logo, googleLogo, githubLogo, microsoftLogo } from '../assets';
+import { auth } from '../utils';
 import Partners from './Partners';
 import Slider from './Slider';
 
@@ -132,7 +129,7 @@ const Login = () => {
             </p>
           </div>
 
-          <button type="submit" disabled={!isValid}>
+          <button id="login" type="submit" disabled={!isValid}>
             Log in
           </button>
         </form>

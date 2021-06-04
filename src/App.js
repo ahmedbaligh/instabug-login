@@ -7,9 +7,7 @@ import {
 } from 'react-router-dom';
 
 import './stylesheets/App.scss';
-import Login from './components/Login';
-import Welcome from './components/Welcome';
-import Error404 from './components/Error404';
+import { Login, Welcome, Error404 } from './components';
 
 const App = () => {
   return (

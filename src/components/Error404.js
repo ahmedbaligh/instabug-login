@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import '../stylesheets/Error404.scss';
-import illustration404 from '../assets/illustration-404.jpg';
+import { illustration404 } from '../assets';
 
 const Error404 = () => {
   useEffect(() => {

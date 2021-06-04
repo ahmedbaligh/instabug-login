@@ -3,9 +3,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
 import '../stylesheets/Slider.scss';
-import productOverview from '../assets/product-overview.svg';
-import bugReporting from '../assets/bug-reporting.svg';
-import crashReporting from '../assets/crash-reporting.svg';
+import { productOverview, bugReporting, crashReporting } from '../assets';
 
 const Slider = () => {
   return (
