@@ -9,6 +9,7 @@ import {
 import './stylesheets/App.scss';
 import Login from './components/Login';
 import Welcome from './components/Welcome';
+import Error404 from './components/Error404';
 
 const App = () => {
   return (
@@ -25,7 +26,10 @@ const App = () => {
             <Welcome />
           </Route>
 
-          <Route path="/404">Error 404</Route>
+          <Route path="/404">
+            <Error404 />
+          </Route>
+          <Redirect exact from="*" to="/404" />
         </Switch>
       </div>
     </Router>

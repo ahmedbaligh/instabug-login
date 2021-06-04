@@ -8,7 +8,7 @@
   place-items: center;
   min-width: 80%;
   height: 100vh;
-  background-color: $slider-background;
+  background-color: $secondary-color;
   color: #fff;
 
   header {
@@ -30,7 +30,7 @@
     .site-logo {
       display: flex;
       align-items: center;
-      color: $slider-background;
+      color: $secondary-color;
       font-size: 1.7rem;
 
       img {
