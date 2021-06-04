@@ -8,6 +8,7 @@ import {
 
 import './stylesheets/App.scss';
 import Login from './components/Login';
+import Welcome from './components/Welcome';
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
           </Route>
 
           <Route exact path="/welcome">
-            Welcome
+            <Welcome />
           </Route>
 
           <Route path="/404">Error 404</Route>

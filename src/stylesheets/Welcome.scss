@@ -1,0 +1,61 @@
+@import './App.scss';
+
+.welcome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  min-width: 80%;
+  height: 100vh;
+  background-color: $slider-background;
+  color: #fff;
+
+  header {
+    background-color: $page-background;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 63px;
+
+    .wrapper {
+      width: 90%;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      color: $slider-background;
+      font-size: 1.7rem;
+
+      img {
+        margin-right: 15px;
+      }
+    }
+
+    .logout {
+      appearance: none;
+      outline: none;
+      border: none;
+      width: 100px;
+      background-color: transparent;
+      font: inherit;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 5px;
+
+      &:hover {
+        color: $supplementary-color;
+      }
+    }
+  }
+
+  .welcome-text {
+    font-size: 2.5rem;
+  }
+}
