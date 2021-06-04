@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 
 import '../stylesheets/Login.scss';
 import logo from '../assets/logo.svg';
@@ -7,21 +7,26 @@ import googleLogo from '../assets/google.svg';
 import githubLogo from '../assets/github.svg';
 import microsoftLogo from '../assets/microsoft.svg';
 import auth from '../utils/auth';
+import Partners from './Partners';
 
+// Patterns to match required email and password format
 const emailPattern = /([a-z0-9._%+-]{2,})@\w{2,}\..{2,}$/i;
 const passwordPattern = /(?=.*\d)(?=.*[A-Z]).{8,}/;
 
 const Login = () => {
+  const history = useHistory();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isValid, setIsValid] = useState(false);
+  const [correctLogin, setCorrectLogin] = useState(true);
 
   const emailRef = useRef();
   const passwordRef = useRef();
   const isFirstRender = useRef(true);
 
   useEffect(() => {
-    document.title = `Login | ${document.title}`;
+    document.title = 'Login | Instabug';
   }, []);
 
   useEffect(() => {
@@ -54,21 +59,23 @@ const Login = () => {
   const onLogin = e => {
     e.preventDefault();
 
-    console.log({ email, password });
+    if (auth.isValid(email, password)) {
+      auth.login(() => history.push('/welcome'), email);
+      setCorrectLogin(true);
+    } else setCorrectLogin(false);
   };
 
   return auth.isAuthenticated() ? (
-    <Redirect to={{ pathname: '/welcome', state: window.location.pathname }} />
+    <Redirect to={{ pathname: '/welcome', state: history.location.pathname }} />
   ) : (
     <div className="login-wrapper">
       <div className="login">
-        <div className="logo-card">
+        <div className="login-header container">
           <img src={logo} alt="Instabug logo" />
+          <h1 className="login-text">Log in to Instabug</h1>
         </div>
 
-        <span className="login-text">Log in to Instabug</span>
-
-        <div className="social-logins">
+        <div className="social-logins container">
           <div className="social-login google">
             <img src={googleLogo} alt="Google logo" />
             <span>Google</span>
@@ -85,7 +92,13 @@ const Login = () => {
           <span className="divider">or</span>
         </div>
 
-        <form onSubmit={onLogin}>
+        <form className="container" onSubmit={onLogin}>
+          {!correctLogin ? (
+            <div className="invalid-login">
+              <p>Your email and/or password are incorrect</p>
+            </div>
+          ) : null}
+
           <div className="form-field email" ref={emailRef}>
             <label htmlFor="email">Work Email</label>
             <input
@@ -123,6 +136,20 @@ const Login = () => {
             Log in
           </button>
         </form>
+
+        <div className="more-options container">
+          <span className="option">
+            Don't have an account? <a href="/signup">Sign up</a>
+          </span>
+          <span className="option">
+            <a href="/sso">Login via SSO</a>
+          </span>
+        </div>
+
+        <section className="our-partners">
+          <h2>Trusted by the top companies</h2>
+          <Partners />
+        </section>
       </div>
 
       <div className="carousel">Slider</div>
