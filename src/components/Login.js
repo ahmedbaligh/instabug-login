@@ -40,12 +40,11 @@ const Login = () => {
     if (!emailPattern.test(email)) {
       emailRef.current.classList.add('invalid');
       setIsValid(false);
-      return;
     } else emailRef.current.classList.remove('invalid');
 
     if (
       !passwordPattern.test(password) ||
-      password.includes(email.match(/(.*)@/)[1])
+      password.includes(email.match(/(.*)@/)?.[1])
     ) {
       passwordRef.current.classList.add('invalid');
       setIsValid(false);
@@ -111,7 +110,7 @@ const Login = () => {
               value={email}
               tabIndex="1"
             />
-            <p className="invalid-text">Enter a valid email adrress.</p>
+            <p className="invalid-text">Enter a valid email address.</p>
           </div>
 
           <div className="form-field password" ref={passwordRef}>
