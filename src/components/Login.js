@@ -8,6 +8,7 @@ import githubLogo from '../assets/github.svg';
 import microsoftLogo from '../assets/microsoft.svg';
 import auth from '../utils/auth';
 import Partners from './Partners';
+import Slider from './Slider';
 
 // Patterns to match required email and password format
 const emailPattern = /([a-z0-9._%+-]{2,})@\w{2,}\..{2,}$/i;
@@ -152,7 +153,7 @@ const Login = () => {
         </section>
       </div>
 
-      <div className="carousel">Slider</div>
+      <Slider />
     </div>
   );
 };

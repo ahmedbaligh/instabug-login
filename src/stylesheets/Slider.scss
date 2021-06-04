@@ -1,0 +1,55 @@
+@import './App.scss';
+
+.slider {
+  background-color: $slider-background;
+  display: flex;
+  padding: 13% 0 0;
+
+  .carousel.carousel-slider {
+    overflow: visible;
+  }
+
+  .carousel .slider-wrapper {
+    min-height: 700px;
+  }
+
+  .carousel .slider {
+    position: static;
+  }
+
+  .carousel .slide {
+    position: static;
+  }
+
+  .slider-item {
+    img {
+      width: 80%;
+    }
+
+    .legend {
+      bottom: -150px;
+      left: unset;
+      margin-left: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      opacity: 1;
+      width: 100%;
+      padding: 10px 15px;
+    }
+  }
+
+  .control-dots {
+    bottom: 100px;
+
+    .dot {
+      opacity: 0.7;
+      width: 10px;
+      height: 10px;
+
+      &:not(.selected) {
+        border: 1px solid #fff;
+        background-color: transparent;
+      }
+    }
+  }
+}
